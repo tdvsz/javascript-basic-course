@@ -15,4 +15,6 @@ switch (userLanguage) {
     case 'cht':
         console.log('午安');
         break;
+    default:
+        console.log("I don't know this language, try again")
 }
