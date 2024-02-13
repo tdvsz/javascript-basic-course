@@ -1,25 +1,16 @@
 let arr = [1, 40, -5, 10, 0];
 
-//Вывод массива
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-}
+console.log(sort(arr))
 
-//Сортировка (метод пузырька)
-let t;
-for (let x = 0; x < arr.length; x++) {
-    for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] > arr[i + 1]) {
-            t = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = t;
+function sort(arr) {
+    for (let x = 0; x < arr.length; x++) {
+        for (let i = x; i < arr.length; i++) {
+            if (arr[x] > arr[i]) {
+                let t = arr[x];
+                arr[x] = arr[i];
+                arr[i] = t;
+            }
         }
     }
-}
-
-console.log('\n')
-
-//Вывод отсортированного массива
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+    return arr;
 }
