@@ -1,18 +1,18 @@
 let arr = [1, 6, 12, 7];
 
-function arrayOfNumbers(arr, deletingElements) {
-    const arr2 = [];
-    for (const el of arr) {
-        if (el <= 5) {
-            arr2.push(deletingElements(el));
+function filterArray(arr, deletePattern) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!deletePattern(arr[i])) {
+            result.push(arr[i]);
         }
     }
-    return arr2;
+    return result;
 }
-
-function deletingElements(el) {
-    return el <= 5;
+    
+function canDelete(number) {
+    return number <= 5;
 }
-
-const result = arrayOfNumbers(arr, deletingElements);
-console.log(result);
+    
+const filteredArray = filterArray(arr, canDelete);
+console.log(filteredArray);
